@@ -247,20 +247,21 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/a7adee6cf365d74734c5d.png"
+        thumb_name = "https://telegra.ph/file/8628c642a266a22effd8c.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
 
         keyboard = InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-            ]
-        )
+                    [
+                        InlineKeyboardButton("🚨 Support", url="t.me/electrobot_support"),
+                        InlineKeyboardButton("📡 Updates", url="t.me/electro_updates"),
+                    ],
+                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                ]
+            )
+
 
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
@@ -293,16 +294,17 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                        InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
+                        InlineKeyboardButton("🚨 Support", url="t.me/electrobot_support"),
+                        InlineKeyboardButton("📡 Updates", url="t.me/electro_updates"),
                     ],
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
             )
 
+
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/a7adee6cf365d74734c5d.png"
+            thumb_name = "https://telegra.ph/file/8628c642a266a22effd8c.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -354,14 +356,15 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-            ]
-        )
+                    [
+                        InlineKeyboardButton("🚨 Support", url="t.me/electrobot_support"),
+                        InlineKeyboardButton("📡 Updates", url="t.me/electro_updates"),
+                    ],
+                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                ]
+            )
+
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
